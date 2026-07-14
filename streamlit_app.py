@@ -24,7 +24,7 @@ def extract_credentials(df_creds):
         },
         "cookie": {
             "name": "growth_center",
-            "key": "growth_2024",
+            "key": "growth_center_secure_signing_key_2026_prod",  
             "expiry_days": 30
         }
     }
