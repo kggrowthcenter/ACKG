@@ -137,8 +137,6 @@ line_chart = (
     .properties(width=600, height=350)
 )
 st.altair_chart(line_chart, use_container_width=True)
-if st.button("Show Timeline Data"):
-  st.dataframe(timeline_counts)
 
 st.subheader("Layer Organizational Distribution", divider="gray")
 layer_breakdown = (
@@ -170,8 +168,6 @@ layered_chart = layer_chart + layer_chart.mark_text(
     align="center", baseline="bottom", fontSize=12, dy=-5, fontWeight="bold"
 ).encode(text=alt.Text("participants:Q"), color=alt.value("black"))
 st.altair_chart(layered_chart, use_container_width=True)
-if st.button("Show Layer Data"):
-  st.dataframe(layer_breakdown)
 
 st.subheader("SubUnit Organizational Distribution", divider="gray")
 subunit_breakdown = (
@@ -201,5 +197,8 @@ layered_subunit_chart = subunit_chart + subunit_chart.mark_text(
     align="center", baseline="bottom", fontSize=12, dy=-5, fontWeight="bold"
 ).encode(text=alt.Text("participants:Q"), color=alt.value("black"))
 st.altair_chart(layered_subunit_chart, use_container_width=True)
-if st.button("Show SubUnit Data"):
+
+with st.expander("View Table Breakdown"):
+  st.dataframe(timeline_counts)
+  st.dataframe(layer_breakdown)
   st.dataframe(subunit_breakdown)
