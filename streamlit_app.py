@@ -54,7 +54,7 @@ if st.session_state.get("logged_in", False):
     make_sidebar()
 
 # Display the title of the app
-st.title("🧙‍♂️ Discovery Test Result")
+st.title("🧙‍♂️ Competency Dashboard")
 
 # Display the login form
 authenticator.login('main')
